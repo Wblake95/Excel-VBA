@@ -1,0 +1,79 @@
+Sub Macro1()
+'
+' Macro1 Macro
+'
+
+'
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Selection.Font.Bold = True
+    With Selection.Font
+        .Name = "Verdana"
+        .Size = 11
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0
+        .ThemeFont = xlThemeFontNone
+    End With
+End Sub
+Sub Macro2()
+'
+' Macro2 Macro
+'
+
+'
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .Color = 5287936
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+End Sub
+Sub Macro3()
+'
+' Macro3 Macro
+'
+
+'
+    Selection.Interior.Color = &HD0D0E
+    
+End Sub
+Sub Macro4()
+    Dim Measurement As Integer
+    Measurement = CInt(InputBox("Your Inches"))
+    
+    MsgBox ("Your in in cm: " & Measurement * 2.54)
+       
+End Sub
+Sub Marco5()
+    Dim Value As Integer, Temp As Integer
+
+    Do While True
+        Temp = Asc(InputBox("Enter your number to add to the pool: "))
+        On Error GoTo valueError
+        
+        If 48 <= Temp And Temp <= 57 Then
+            Value = Value + Temp
+        Else
+            MsgBox ("That is not a correct input, please use an Integer")
+        End If
+    Loop
+
+valueError:
+    MsgBox ("Your total is: " & Value)
+End Sub

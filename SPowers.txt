@@ -1,0 +1,8 @@
+Function SPOWERS(N As Integer, M As Integer) As Integer
+    'Dim N As Integer: N = 0
+    'Dim M As Integer: M = 0
+    
+    For i = 1 To M
+        N = N + N * i
+    Next i
+End Function

@@ -1,0 +1,13 @@
+Sub Fuzzy_Finder()
+    Dim var As String
+    
+    var = InputBox("Sheet Finder", , "Name")
+    
+    For i = 1 To ActiveWorkbook.Worksheets.Count
+        If InStr(1, ActiveWorkbook.Sheets(i).Name, var) >= 1 Then
+            Worksheets(i).Visible = True
+            ActiveWorkbook.Sheets(i).Select
+            'Exit For
+        End If
+    Next i
+End Sub

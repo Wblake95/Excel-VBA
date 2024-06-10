@@ -1,0 +1,5 @@
+Sub Hide_Sheets()
+    For i = 2 To ActiveWorkbook.Worksheets.Count
+        Worksheets(i).Visible = False
+    Next i
+End Sub

@@ -1,0 +1,16 @@
+Sub MyText2Col()
+    Columns("B:F").Delete
+    Range("A:A").TextToColumns , xlDelimited, xlTextQualifierDoubleQuote, True, , , , True
+    
+    Sheets.Add
+    Sheets(2).Select
+    
+    For Each c In Range("A1:A2000").Cells
+        If c.Value = "UOP" Then
+            c.EntireRow.Copy
+            Sheets(1).Select
+            Range("A1").Insert
+            Sheets(2).Select
+        End If
+    Next c
+End Sub
